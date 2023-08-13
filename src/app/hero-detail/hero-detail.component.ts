@@ -10,12 +10,14 @@ import { HeroService } from '../hero.service';
 })
 export class HeroDetailComponent {
 
+  hero: Hero | undefined;
+  
   constructor(
     private route: ActivatedRoute,
     private heroService: HeroService,
     private location: Location
   ) { }
- 
+
   ngOnInit(): void {
     this.getHero();
   }
@@ -26,5 +28,9 @@ export class HeroDetailComponent {
       .subscribe(hero => this.hero = hero);
   }
 
-  @Input() hero?: Hero;
+  goBack(): void {
+    this.location.back();
+  }
+
+
 }
