@@ -57,6 +57,17 @@ private handleError<T>(operation = 'operation', result?: T) {
     // return of(hero);
   }
 
+  updateHero(hero: Hero): Observable<any> {
+    return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
+        tap( _ => this.log(`updated hero id=${hero.id}`)),
+        catchError(this.handleError<any>('updateHero'))
+      )
+  }
+
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+  
   /** Log a HeroService message with the MessageService */
 private log(message: string) {
   this.messageService.add(`HeroService: ${message}`);
