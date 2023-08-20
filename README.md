@@ -1,4 +1,4 @@
-# Angular Tour of Heroes Tutorial
+# Angular Tour of Heroes
 
 Welcome to the Angular Tour of Heroes tutorial! This tutorial is designed to guide you through building a simple application that showcases the fundamentals of Angular. By the end of this tutorial, you'll have created a basic "Tour of Heroes" app that lets you manage a list of heroes.
 
